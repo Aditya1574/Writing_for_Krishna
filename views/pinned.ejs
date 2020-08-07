@@ -1,0 +1,31 @@
+<%- include("partials/header") -%>
+
+<div class="homeArticlepin">
+
+<% pinarticles.forEach(function(item){ %>
+
+    <h2 class="contentTitle"> <%= item.Title %> </h2>
+  
+  
+  <% if(item.Content.length > 100) { %>
+  
+  <p class="contentA">  <%= item.Content.substring(0,100) + "..."   %>  <a href= "/posts/<%= item.Title %>" >Read More</a> </p>
+  
+  <% } else { %>
+  
+    <p class="contentA"> <%= item.Content %>  </p>
+  
+    <% } %>
+  
+    <h3 class="extra"> <%= item.Author %> </h3>
+  
+    <h4 class="extra"> <%= item.College %> </h4>
+  
+    <h4 class="extra"> <%= item.Date   %>    </h4>
+  
+    <% }); %>
+  
+  </div>
+
+
+<%- include("partials/footer") -%>

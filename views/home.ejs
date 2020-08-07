@@ -1,0 +1,56 @@
+<%- include("partials/header") -%>
+
+<div class="ppd">
+<center><b class="Head" style="color:white">Hare Krishna</b></center>
+</div>
+
+<div class="content container-fluid">
+ 
+<p>
+Once , Srila Prabhupada said that - <b>"These books are so potent that anyone 
+who reads them is sure to become Krishna Conscious, so it is a very valuable service to distribute our books."</b>
+This is enough to convey the <b>Gravity of Truth</b> contained by the books about the <b>The Absolute truth</b> ,the 
+<b>Aim of Human form of Life.</b> and <b>The Science of Self-Realization</b>. 
+<br>
+The Importance Of Srila Prabhupad's Books was Quoted by Himself - <b>"Books are the basis of our Movement. Without 
+our books, our preaching will have no effect."</b>.
+<br>
+Hence, We Present You a Platform to express Your Realizations and Understandings after Reading Srila Prabhupad
+Books.
+<br>
+This Simple and Sublime Process of <b>Krishna Consciousness</b> includes <b>Sravanam</b> and <b>Kirtanam.</b>
+Sravanam Refers to Submissive Listening , In Order to Faciliate this , we have the Sravanam Section Where 
+You can find very Informative and Spiritually Nourishing Lectures delivered by highly realized Souls , along
+with this we also have a greatly refreshing and Purifying Music for the Soul . 
+</p>
+</div>
+<hr>
+
+<div class="homeArticleH">
+
+<% Items.forEach(function(item){ %>
+
+  <h2 class="contentTitle"> <%= item.Title %> </h2>
+
+
+<% if(item.Content.length > 100) { %>
+
+<p class="contentA">  <%= item.Content.substring(0,100) + "..."   %>  <a href= "/posts/<%= item.Title %>" >Read More</a> </p>
+
+<% } else { %>
+
+  <p class="contentA"> <%= item.Content %>  </p>
+
+  <% } %>
+
+  <h3 class="extra"> <%= item.Author %> </h3>
+
+  <h4 class="extra"> <%= item.College %> </h4>
+
+  <h4 class="extra"> <%= item.Date   %>    </h4>
+
+  <% }); %>
+
+</div>
+
+<%- include("partials/footer") -%>
